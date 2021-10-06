@@ -11,10 +11,6 @@ public class Shuffler {
     this.rng = rng;
   }
 
-  public void shuffle(int[] data) {
-    shufflePart(data, data.length-1);
-  }
-
   public int[] shuffle(int[] data, int drawSize) {
     shufflePart(data, drawSize);
     return Arrays.copyOfRange(data, data.length - drawSize, data.length);
@@ -25,11 +21,73 @@ public class Shuffler {
     return Arrays.copyOfRange(data, data.length - drawSize, data.length);
   }
 
-  public void shuffle(double[] data) {
+  public boolean[] shuffle(boolean[] data, int drawSize) {
+    shufflePart(data, drawSize);
+    return Arrays.copyOfRange(data, data.length - drawSize, data.length);
+  }
+
+  public byte[] shuffle(byte[] data, int drawSize) {
+    shufflePart(data, drawSize);
+    return Arrays.copyOfRange(data, data.length - drawSize, data.length);
+  }
+
+  public char[] shuffle(char[] data, int drawSize) {
+    shufflePart(data, drawSize);
+    return Arrays.copyOfRange(data, data.length - drawSize, data.length);
+  }
+
+  public short[] shuffle(short[] data, int drawSize) {
+    shufflePart(data, drawSize);
+    return Arrays.copyOfRange(data, data.length - drawSize, data.length);
+  }
+
+  public float[] shuffle(float[] data, int drawSize) {
+    shufflePart(data, drawSize);
+    return Arrays.copyOfRange(data, data.length - drawSize, data.length);
+  }
+
+  public long[] shuffle(long[] data, int drawSize) {
+    shufflePart(data, drawSize);
+    return Arrays.copyOfRange(data, data.length - drawSize, data.length);
+  }
+
+  public Object[] shuffle(Object[] data, int drawSize) {
+    shufflePart(data, drawSize);
+    return Arrays.copyOfRange(data, data.length - drawSize, data.length);
+  }
+
+  public void shuffle(int[] data) {
     shufflePart(data, data.length-1);
   }
 
-  // TODO Create overloads of both forms of shuffle (full and partial) for boolean[], byte[], char[], short[], float[], long[], and Object array
+  public void shuffle(boolean[] data) {
+    shufflePart(data, data.length-1);
+  }
+
+  public void shuffle(byte[] data) {
+    shufflePart(data, data.length-1);
+  }
+
+  public void shuffle(char[] data) {
+    shufflePart(data, data.length-1);
+  }
+
+  public void shuffle(short[] data) {
+    shufflePart(data, data.length-1);
+  }
+
+  public void shuffle(float[] data) {
+    shufflePart(data, data.length-1);
+  }
+
+  public void shuffle(long[] data) {
+    shufflePart(data, data.length-1);
+  }
+
+  public void shuffle(Object[] data) {
+    shufflePart(data, data.length-1);
+  }
+
   private void shufflePart(int[] data, int drawSize) {
     for (int sourceIndex = data.length-1; sourceIndex >= data.length - drawSize; sourceIndex--) {
       int destIndex = rng.nextInt(sourceIndex + 1);
@@ -52,6 +110,81 @@ public class Shuffler {
     }
   }
 
-  // TODO Create overloads of shufflePart for boolean[], byte[], char[], short[], float[], long[], and Object array
+  private void shufflePart(boolean[] data, int drawSize) {
+    for (int sourceIndex = data.length-1; sourceIndex >= data.length - drawSize; sourceIndex--) {
+      int destIndex = rng.nextInt(sourceIndex + 1);
+      if (sourceIndex != destIndex) {
+        boolean temp = data[sourceIndex];
+        data[sourceIndex] = data[destIndex];
+        data[destIndex] = temp;
+      }
+    }
+  }
+
+  private void shufflePart(byte[] data, int drawSize) {
+    for (int sourceIndex = data.length-1; sourceIndex >= data.length - drawSize; sourceIndex--) {
+      int destIndex = rng.nextInt(sourceIndex + 1);
+      if (sourceIndex != destIndex) {
+        byte temp = data[sourceIndex];
+        data[sourceIndex] = data[destIndex];
+        data[destIndex] = temp;
+      }
+    }
+  }
+
+  private void shufflePart(char[] data, int drawSize) {
+    for (int sourceIndex = data.length-1; sourceIndex >= data.length - drawSize; sourceIndex--) {
+      int destIndex = rng.nextInt(sourceIndex + 1);
+      if (sourceIndex != destIndex) {
+        char temp = data[sourceIndex];
+        data[sourceIndex] = data[destIndex];
+        data[destIndex] = temp;
+      }
+    }
+  }
+
+  private void shufflePart(short[] data, int drawSize) {
+    for (int sourceIndex = data.length-1; sourceIndex >= data.length - drawSize; sourceIndex--) {
+      int destIndex = rng.nextInt(sourceIndex + 1);
+      if (sourceIndex != destIndex) {
+        short temp = data[sourceIndex];
+        data[sourceIndex] = data[destIndex];
+        data[destIndex] = temp;
+      }
+    }
+  }
+
+  private void shufflePart(float[] data, int drawSize) {
+    for (int sourceIndex = data.length-1; sourceIndex >= data.length - drawSize; sourceIndex--) {
+      int destIndex = rng.nextInt(sourceIndex + 1);
+      if (sourceIndex != destIndex) {
+        float temp = data[sourceIndex];
+        data[sourceIndex] = data[destIndex];
+        data[destIndex] = temp;
+      }
+    }
+  }
+
+  private void shufflePart(long[] data, int drawSize) {
+    for (int sourceIndex = data.length-1; sourceIndex >= data.length - drawSize; sourceIndex--) {
+      int destIndex = rng.nextInt(sourceIndex + 1);
+      if (sourceIndex != destIndex) {
+        long temp = data[sourceIndex];
+        data[sourceIndex] = data[destIndex];
+        data[destIndex] = temp;
+      }
+    }
+  }
+
+  private void shufflePart(Object[] data, int drawSize) {
+    for (int sourceIndex = data.length-1; sourceIndex >= data.length - drawSize; sourceIndex--) {
+      int destIndex = rng.nextInt(sourceIndex + 1);
+      if (sourceIndex != destIndex) {
+        Object temp = data[sourceIndex];
+        data[sourceIndex] = data[destIndex];
+        data[destIndex] = temp;
+      }
+    }
+  }
 }
 
